@@ -4,13 +4,16 @@ import './App.css';
 
 class App extends Component {
 
+  updateNumber =() =>{
+    let newNumber = this.props.onClickWho(this.state.number)
+    this.setState({number: newNumber})
+  }
 
-
-  state={number: this.props.number}
+  state={number: 1}
   render() {
     return (
       <div>
-        <button>Hello world!</button>
+        <button  onClick={this.updateNumber}>Hello world!</button>
         <span>number: {this.state.number}</span>
       </div>
     );
